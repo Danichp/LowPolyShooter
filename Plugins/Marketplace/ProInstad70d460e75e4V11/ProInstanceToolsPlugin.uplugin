@@ -1,0 +1,35 @@
+{
+	"FileVersion": 3,
+	"Version": 14,
+	"VersionName": "1.28",
+	"FriendlyName": "ProInstance Tools",
+	"Description": "A set of tools to control procedurally generated placement of meshes or actors with easy and unified settings.",
+	"Category": "Level Design",
+	"CreatedBy": "Dmitry Karpukhin",
+	"CreatedByURL": "com.epicgames.launcher://ue/marketplace/profile/Dmitry+Karpukhin",
+	"DocsURL": "https://dmkarpukhin.com/proinstance-tools-plugin/documentation/",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/b30f0d82c9e84928afc19ae5db50f765",
+	"SupportURL": "mailto:skxdoom@gmail.com",
+	"EngineVersion": "5.5.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "ProInstanceToolsPlugin",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux",
+				"Android",
+				"IOS"
+			]
+		},
+		{
+			"Name": "ProInstanceToolsEditorPlugin",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		}
+	]
+}
