@@ -7,6 +7,7 @@
 #include "TMS_HealthComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDeathSignature);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FOnDamaged, AActor*, DamagedActor, float, Damage, AController*, InstigatedBy, AActor*, DamageCauser);
 
 class UTMS_MovementData;
 class ATMS_Player;
@@ -52,6 +53,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = State)
 	bool bDead = false;
+	
+	UPROPERTY(BlueprintAssignable)
+	FOnDamaged OnDamaged;
 
 	FTimerHandle CoolDownHandle;
 	

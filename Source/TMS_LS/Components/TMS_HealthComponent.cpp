@@ -42,6 +42,8 @@ void UTMS_HealthComponent::OnTakeDamage(AActor* DamagedActor, float Damage, cons
 
 	UE_LOG(LogTemp, Display, TEXT("ResultDamage: %f"), Damage);
 	SetHealth(GetHealth() - Damage);
+	OnDamaged.Broadcast(DamagedActor, Damage, InstigatedBy, DamageCauser);
+	
 
 	ATMS_Player* InstigatorPlayer  = nullptr;
 	if (InstigatedBy && InstigatedBy->GetPawn())

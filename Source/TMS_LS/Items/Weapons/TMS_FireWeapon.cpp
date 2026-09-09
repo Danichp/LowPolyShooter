@@ -6,6 +6,7 @@
 #include "MeshPaintVisualize.h"
 #include "Engine/DamageEvents.h"
 #include "TMS_LS/Core/TMS_BaseCharacter.h"
+#include "TMS_LS/Core/AI/TMS_EnemyControllerBase.h"
 
 // Sets default values
 ATMS_FireWeapon::ATMS_FireWeapon()
@@ -102,6 +103,7 @@ void ATMS_FireWeapon::Shoot()
 	}
 	
 	FHitResult Hit;
+	
 
 	ATMS_BaseCharacter* Char = Cast<ATMS_BaseCharacter>(GetOwner());
 	if (!Char) return;
@@ -119,6 +121,19 @@ void ATMS_FireWeapon::Shoot()
 
 	FCollisionQueryParams CollisionParams;
 	CollisionParams.AddIgnoredActors(IgnoreActors);
+	
+	if (!Char->IsPlayerControlled())
+	{
+		GetWorld()->LineTraceSingleByChannel(Hit, StartLocation, EndLocation, ECC_GameTraceChannel4, CollisionParams);
+		DrawDebugLine(GetWorld(), StartLocation, EndLocation, FColor::Green, false, 2.5f, 0, 1.f);
+		if (Hit.bBlockingHit && Hit.GetActor())
+		{
+			Hit.GetActor()->TakeDamage(Damage, FDamageEvent{}, Char->GetController(), Char);
+		}
+		ApplyRecoil();
+		GetWorldTimerManager().SetTimer(CooldownHandle, this, &ThisClass::Shoot, 1 / Speed);
+		return;
+	}
 
 	GetWorld()->LineTraceSingleByChannel(Hit, StartLocation, EndLocation,
 		ECC_GameTraceChannel4, CollisionParams);
@@ -217,7 +232,14 @@ bool ATMS_FireWeapon::GetPlayerViewPoint(FVector& OutViewLocation, FRotator& Out
 	else
 	{
 		OutViewLocation = GetMuzzleLocation();
-		OutviewDirection = WeaponMesh->GetSocketRotation(FName("S_Muzzle"));
+		if (ATMS_EnemyControllerBase* AIC = Cast<ATMS_EnemyControllerBase>(Player->GetController()))
+		{
+			OutviewDirection = AIC->GetControlRotation();
+		}
+		else
+		{
+			OutviewDirection = WeaponMesh->GetSocketRotation(FName("S_Muzzle"));
+		}
 	}
 	return true;
 }

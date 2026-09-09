@@ -61,24 +61,45 @@ AActor* ATMS_EnemyControllerBase::GetTargetActor()
 
 FVector ATMS_EnemyControllerBase::GetTargetHeadBoneLocation()
 {
-	FVector DefaultLocation = GetBlackboardComponent()->GetValueAsVector("TargetLocation");
-	if (!GetTargetActor()) return DefaultLocation;
+	AActor* Target = GetTargetActor();
+	if (!Target)
+	{
+		return FVector::ZeroVector;
+	}
 
-	ACharacter* Char = Cast<ACharacter>(GetTargetActor());
-	if (!Char) return DefaultLocation;
+	ACharacter* Char = Cast<ACharacter>(Target);
+	if (!Char)
+	{
+		return Target->GetActorLocation();
+	}
 
-	return Char->GetMesh()->GetBoneLocation(FName("head"));
+	USkeletalMeshComponent* Mesh = Char->GetMesh();
+	if (!Mesh) return Target->GetActorLocation();
+
+	const FName HeadBoneName = TEXT("ead");
+	int32 BoneIndex = Mesh->GetBoneIndex(HeadBoneName);
+	if (BoneIndex == INDEX_NONE)
+	{
+		return Target->GetActorLocation();
+	}
+
+	return Mesh->GetBoneLocation(HeadBoneName);
 }
 
-// Called every frame
 void ATMS_EnemyControllerBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	//SetFocalPoint(GetTargetHeadBoneLocation());
-	//SetFocus(GetTargetActor());
+
+	FVector TargetPos = GetTargetHeadBoneLocation();
+	if (TargetPos.IsNearlyZero())
+	{
+		return;
+	}
+
 	FRotator TargetRotation = UKismetMathLibrary::FindLookAtRotation(
 		GetPawn()->GetActorLocation(),
-		GetTargetHeadBoneLocation());
+		TargetPos
+	);
 	SetControlRotation(TargetRotation);
 }
 
@@ -93,6 +114,23 @@ void ATMS_EnemyControllerBase::OnPossess(APawn* InPawn)
 			RunBehaviorTree(BT);
 			GetBlackboardComponent()->SetValueAsObject(PatrolPathKeyName, EnemyPawn->PatrolPath.Get());
 		}
+		
+		if (UTMS_HealthComponent* Health = EnemyPawn->GetComponentByClass<UTMS_HealthComponent>())
+		{
+			Health->OnDamaged.AddDynamic(this, &ATMS_EnemyControllerBase::HandleDamaged);
+		}
 	}
+}
+
+void ATMS_EnemyControllerBase::HandleDamaged(AActor* DamagedActor, float Damage, AController* InstigatedBy, AActor* DamageCauser)
+{
+	if (!InstigatedBy) return;
+	APawn* InstigatorPawn = InstigatedBy->GetPawn();
+	if (!InstigatorPawn) return;
+
+	UBlackboardComponent* BB = GetBlackboardComponent();
+	if (!BB) return;
+
+	BB->SetValueAsObject(TargetEnemyKeyName, InstigatorPawn);
 }
 

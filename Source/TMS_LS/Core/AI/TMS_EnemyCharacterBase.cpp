@@ -5,6 +5,7 @@
 
 #include "AIController.h"
 #include "BrainComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "TMS_LS/Components/NPCConfigComponent.h"
 #include "TMS_LS/Components/TMS_LootComponent.h"
 #include "TMS_LS/Core/TMS_HUD.h"
@@ -44,6 +45,7 @@ void ATMS_EnemyCharacterBase::OnDeath()
 		AIC->BrainComponent->StopLogic("Death");
 	}
 	SetLifeSpan(0.f);
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	GetMesh()->SetCollisionEnabled(ECollisionEnabled::Type::QueryAndPhysics);
 	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility, ECR_Block);
 	GetMesh()->DetachFromComponent(FDetachmentTransformRules::KeepWorldTransform);

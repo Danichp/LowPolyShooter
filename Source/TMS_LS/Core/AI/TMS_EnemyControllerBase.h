@@ -47,5 +47,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION()
+	void HandleDamaged(AActor* DamagedActor, float Damage, AController* InstigatedBy, AActor* DamageCauser);
 	virtual void OnPossess(APawn* InPawn) override;
 };
