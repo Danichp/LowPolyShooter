@@ -132,5 +132,7 @@ void ATMS_EnemyControllerBase::HandleDamaged(AActor* DamagedActor, float Damage,
 	if (!BB) return;
 
 	BB->SetValueAsObject(TargetEnemyKeyName, InstigatorPawn);
+	
+	BB->SetValueAsVector(LastKnownLocationKey, InstigatorPawn->GetActorLocation());
 }
 

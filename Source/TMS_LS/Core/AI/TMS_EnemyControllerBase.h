@@ -33,6 +33,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
 	FName PatrolPathKeyName = "PatrolPath";
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
+	FName LastKnownLocationKey = "LastKnownLocation";
 
 protected:
 	// Called when the game starts or when spawned

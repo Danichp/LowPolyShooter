@@ -22,4 +22,8 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Behavior")
 	FBlackboardKeySelector TargetEnemyKey;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Blackboard")
+	FBlackboardKeySelector LastKnownLocationKey;
+	
 };

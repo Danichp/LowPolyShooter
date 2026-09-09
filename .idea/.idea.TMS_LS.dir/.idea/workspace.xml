@@ -8,28 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="655b8281-5753-4a03-8620-77c7f245ea64" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/Tasks/TMS_ClearBlackboardValue.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/Tasks/TMS_ClearBlackboardValue.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TMS_LS.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TMS_LS.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/CR/Demo/Meshes/SK_Mannequin.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/CR/Demo/Meshes/SK_Mannequin.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TMS_LS/AI/BB_EnemyBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TMS_LS/AI/BB_EnemyBase.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/TMS_LS/AI/BP_Enemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TMS_LS/AI/BP_Enemy.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/TMS_LS/AI/BP_EnemyAI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TMS_LS/AI/BP_EnemyAI.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/TMS_LS/AI/BT_EnemyBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TMS_LS/AI/BT_EnemyBase.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/TMS_LS/Core/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TMS_LS/Core/BP_Player.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/2/HN/VZL5CTORFMOO7N4WYB81QW.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/2/HN/VZL5CTORFMOO7N4WYB81QW.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/2/MV/04SV2AJW4WQ9NR62UK77TY.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/2/MV/04SV2AJW4WQ9NR62UK77TY.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/5/DG/OVB77S2YZOM3NJJ391OACS.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/5/DG/OVB77S2YZOM3NJJ391OACS.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/8/Y7/VZH24IN5UIMOO2MCFL36RN.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/8/Y7/VZH24IN5UIMOO2MCFL36RN.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/9/ZB/SYLRXA8QS9BSQFOZ032QWI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/9/ZB/SYLRXA8QS9BSQFOZ032QWI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/D/HX/DX3LKJVD5YI4JK9EIBAINH.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/D/HX/DX3LKJVD5YI4JK9EIBAINH.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/F/41/N7EA8FHIAS0UX9K63SAV4K.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/TMS_LS/Maps/Big_Map/F/41/N7EA8FHIAS0UX9K63SAV4K.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/OH/104YKRMHSF4IUCOF4FDWCT.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/P8/KEY3EL483SYZFZV6NWMPHC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/P8/KEY3EL483SYZFZV6NWMPHC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TMS_LS/Components/TMS_HealthComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TMS_LS/Components/TMS_HealthComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TMS_LS/Components/TMS_HealthComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TMS_LS/Components/TMS_HealthComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/TMS_EnemyCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/TMS_EnemyCharacterBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/TMS_LS/VFX/NS_Sparks.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TMS_LS/VFX/NS_Sparks.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/Services/TMS_FindNearestEnemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/Services/TMS_FindNearestEnemy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/Services/TMS_FindNearestEnemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/Services/TMS_FindNearestEnemy.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/TMS_EnemyControllerBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/TMS_EnemyControllerBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/TMS_EnemyControllerBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TMS_LS/Core/AI/TMS_EnemyControllerBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TMS_LS/Items/Weapons/TMS_FireWeapon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TMS_LS/Items/Weapons/TMS_FireWeapon.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TMS_LS.uproject.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/TMS_LS.uproject.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +44,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://2" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://5" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://6" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Plugins/Experimental/ChaosCachingUSD/Source/ChaosCachingUSD/ChaosCachingUSD.build.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Editor/Kismet/Public/FindInBlueprints.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Editor/UnrealEd/Classes/CookOnTheSide/CookOnTheFlyServer.h" root0="FORCE_HIGHLIGHTING" />
@@ -81,6 +71,8 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Runtime/Json/Public/Serialization/JsonSerializer.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/TMS_LS/Components/NPCConfigComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/TMS_LS/Components/NPCConfigComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/TMS_LS/Core/AI/Tasks/TMS_ClearBlackboardValue.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/TMS_LS/Core/AI/Tasks/TMS_ClearBlackboardValue.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/TMS_LS/Items/Weapons/TMS_ShotgunWeapon.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/TMS_LS/Items/Weapons/TMS_ShotgunWeapon.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -317,7 +309,7 @@
       <workItem from="1788835538640" duration="356000" />
       <workItem from="1788837284126" duration="1738000" />
       <workItem from="1788920237986" duration="5190000" />
-      <workItem from="1788950635773" duration="3187000" />
+      <workItem from="1788950635773" duration="8897000" />
     </task>
     <servers />
   </component>

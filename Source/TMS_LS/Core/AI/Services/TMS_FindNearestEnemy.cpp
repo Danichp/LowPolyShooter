@@ -14,20 +14,27 @@ UTMS_FindNearestEnemy::UTMS_FindNearestEnemy()
 
 void UTMS_FindNearestEnemy::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
 {
-	const auto Blackboard = OwnerComp.GetBlackboardComponent();
-	if (Blackboard)
-	{
-		const auto Cont = OwnerComp.GetAIOwner();
-		if (Cont)
-		{
-			const auto Perception = Cont->GetComponentByClass<UTMS_AIPerception>();
-			if (Perception)
-			{
-				Blackboard->SetValueAsObject(TargetEnemyKey.SelectedKeyName,
-					Perception->GetClosestEnemy().Get());
-			}
-		}
-	}
-	
 	Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
+
+	UBlackboardComponent* Blackboard = OwnerComp.GetBlackboardComponent();
+	if (!Blackboard) return;
+
+	AAIController* Cont = OwnerComp.GetAIOwner();
+	if (!Cont) return;
+
+	UTMS_AIPerception* Perception = Cont->GetComponentByClass<UTMS_AIPerception>();
+	if (!Perception) return;
+
+	TWeakObjectPtr<AActor> ClosestEnemy = Perception->GetClosestEnemy();
+
+	if (ClosestEnemy.IsValid())
+	{
+		AActor* Enemy = ClosestEnemy.Get();
+		Blackboard->SetValueAsObject(TargetEnemyKey.SelectedKeyName, Enemy);
+		Blackboard->SetValueAsVector(LastKnownLocationKey.SelectedKeyName, Enemy->GetActorLocation());
+	}
+	else
+	{
+		Blackboard->SetValueAsObject(TargetEnemyKey.SelectedKeyName, nullptr);
+	}
 }
